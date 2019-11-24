@@ -6,19 +6,36 @@ namespace Fib_Sequencer
     {
         static void Main(string[] args)
         {
-            string fibString = "Fibinachi Number";
-            int i = 1;
+            string fibString = "Fibinachi Number: ";
+            int fibCalculatedInt = 0;
+            string fibDisplayString = "";
+            int i = 0;
             int x = 1;
-            int y = 1;
-            int z = 2;
+            int y = 0;
+            int z = 0;
+
+            string evenString = "Even ";
+            string oddString = "Odd ";
+            string initialFibString = "The first fib Number is ";
 
             int evenI = 0;
             int oddI = 0;
             int evenInt = 0;
             int oddInt = -1;
-            int[] evenArray = new int [1001];
-            int[] oddArray = new int[1001];
-           
+            int countI = 0;
+            int arraySize = 1001;
+            int countArraySize = arraySize * 2;
+            int[] countArray = new int[countArraySize];
+            int[] evenArray = new int [arraySize];
+            int[] oddArray = new int[arraySize];
+
+
+            do
+            {
+                countArray[countI] = countI;                
+                Console.WriteLine("Count Array " + countI + " : " + countArray[countI]);
+                countI++;
+            } while (countI < countArraySize);
 
             do
             {                
@@ -28,7 +45,7 @@ namespace Fib_Sequencer
                 evenArray[evenI] = evenInt;
                 Console.WriteLine("Even Array " + evenI + " : " + evenArray[evenI]);
                 evenI++;
-            } while (evenI < 1001);   
+            } while (evenI < arraySize);   
             
             do
             {                
@@ -38,59 +55,56 @@ namespace Fib_Sequencer
                 oddArray[oddI] = oddInt;
                 Console.WriteLine("Odd Array "+ oddI + " : " + oddArray[oddI]);
                 oddI++;
-            } while (oddI < 1001);
+            } while (oddI < arraySize);
 
-            do
+            while (i < 1)            
             {
-                if (i < 2)
-                {
-                    string msg_01 = $"{fibString} {i}: {x}";
-                    Console.WriteLine(msg_01);
-                    i++;
-                }               
-                else
-                {
-                    break;
-                }
+                fibCalculatedInt = x + y + z;
+                z = fibCalculatedInt;
+                x = x + x;
 
-            } while (i < 2);
+                fibDisplayString = initialFibString + fibCalculatedInt;
+                Console.WriteLine(fibDisplayString);
+                i++;
+            }
+                                    
 
-            do
-            {              
-                if(i > 2 && i < 3)
-                {
-                    z = x + y;
-                    string msg_02 = $"{fibString} {i}: {z}";
-                    Console.WriteLine(msg_02);
-                    i++;
-                }               
-                else
-                {
-                    break;
-                }
+                    while (i == evenArray[i])
+                    {
+                        fibCalculatedInt = x + y;
+                        z = fibCalculatedInt;
 
-            } while (i < 3 && i > 2);
+                        fibDisplayString = evenString + fibString + fibCalculatedInt;
+                        Console.WriteLine(fibDisplayString);
+                        i++;
+                    }
+                    while (i == oddArray[i])
+                    {
+                        fibCalculatedInt = z + y;
+                        z = fibCalculatedInt;
 
-            do
-            {               
-                if (i < 1001)
-                {
-                    y = z + y;
-                    string msg_02 = $"{fibString} {i}: {y}";
-                    Console.WriteLine(msg_02);
-                    i++;
-                }
-                else if (i == 1000)
-                {
-                    break;
-                }
-                else
-                {
-                    break;
-                }
+                        fibDisplayString = oddString + fibString + fibCalculatedInt;
+                        Console.WriteLine(fibDisplayString);
+                        i++;
+                    }
 
-            } while (i < 1001);
+            while (i == countArray[i])
+            {
+                i++;
+            }
 
+                    //if (i == countArraySize || i > countArraySize)
+                    //{
+                    //    break;
+                    //}
+                    //else
+                    //{
+                    //    i++;
+                    //}
+
+               
+                
+                                         
         }
     }
 }
