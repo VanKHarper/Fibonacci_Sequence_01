@@ -1,33 +1,96 @@
 ﻿using System;
 
-namespace Fib_Sequence
+namespace VariableInterpolation
 {
     class Program
     {
         static void Main(string[] args)
         {
+            string fibString = "Fibinachi Number";
+            int i = 1;
+            int x = 1;
+            int y = 1;
+            int z = 2;
+
+            int evenI = 0;
+            int oddI = 0;
+            int evenInt = 0;
+            int oddInt = -1;
+            int[] evenArray = new int [1001];
+            int[] oddArray = new int[1001];
            
-                int z = 0;
-                int y = 0;
-                int x = 0;
-                int i = 0;
 
-                x = 1;
-                y = 1;
+            do
+            {                
+                evenInt = evenInt + 2;
+                string displayEven = $"Even Nubmber {evenI}: {evenInt}";
+                Console.WriteLine(displayEven);
+                evenArray[evenI] = evenInt;
+                Console.WriteLine(evenArray[evenI]);
+                evenI++;
+            } while (evenI < 1001);   
+            
+            do
+            {                
+                oddInt = oddInt + 2;
+                string displayOdd = $"Odd Nubmber {oddI}: {oddInt}";
+                Console.WriteLine(displayOdd);
+                oddArray[oddI] = oddInt;
+                Console.WriteLine(oddArray[oddI]);
+                oddI++;
+            } while (oddI < 1001);
 
-                while (i < 255)
+            do
+            {
+                if (i < 2)
                 {
+                    string msg_01 = $"{fibString} {i}: {x}";
+                    Console.WriteLine(msg_01);
                     i++;
-                    int fib_z = x + y;
-                    x = y + fib_z;
-                    y = fib_z + x;
-                   
-                    Console.WriteLine("{0}, {1}, {2}", fib_z, x, y);
+                }               
+                else
+                {
+                    break;
                 }
 
-           
-        }
+            } while (i < 2);
 
+            do
+            {              
+                if(i > 2 && i < 3)
+                {
+                    z = x + y;
+                    string msg_02 = $"{fibString} {i}: {z}";
+                    Console.WriteLine(msg_02);
+                    i++;
+                }               
+                else
+                {
+                    break;
+                }
+
+            } while (i < 3 && i > 2);
+
+            do
+            {               
+                if (i < 1001)
+                {
+                    y = z + y;
+                    string msg_02 = $"{fibString} {i}: {y}";
+                    Console.WriteLine(msg_02);
+                    i++;
+                }
+                else if (i == 1000)
+                {
+                    break;
+                }
+                else
+                {
+                    break;
+                }
+
+            } while (i < 1001);
+
+        }
     }
 }
-
