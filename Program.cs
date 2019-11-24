@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VariableInterpolation
+namespace Fib_Sequencer
 {
     class Program
     {
@@ -26,7 +26,7 @@ namespace VariableInterpolation
                 string displayEven = $"Even Nubmber {evenI}: {evenInt}";
                 Console.WriteLine(displayEven);
                 evenArray[evenI] = evenInt;
-                Console.WriteLine(evenArray[evenI]);
+                Console.WriteLine("Even Array " + evenI + " : " + evenArray[evenI]);
                 evenI++;
             } while (evenI < 1001);   
             
@@ -36,7 +36,7 @@ namespace VariableInterpolation
                 string displayOdd = $"Odd Nubmber {oddI}: {oddInt}";
                 Console.WriteLine(displayOdd);
                 oddArray[oddI] = oddInt;
-                Console.WriteLine(oddArray[oddI]);
+                Console.WriteLine("Odd Array "+ oddI + " : " + oddArray[oddI]);
                 oddI++;
             } while (oddI < 1001);
 
